@@ -8,6 +8,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.lchang.appue.presentation.auth.LoginScreen
 import dev.lchang.appue.presentation.auth.RegisterScreen
+import dev.lchang.appue.presentation.components.CatalogoDeAutosDep
+import dev.lchang.appue.presentation.components.ConsumoDeAguaCal
+import dev.lchang.appue.presentation.components.RegistroDeActFisica
 import dev.lchang.appue.presentation.home.HomeScreen
 import dev.lchang.appue.presentation.permissions.GalleryPermissionsScreen
 
@@ -25,7 +28,7 @@ fun AppNavGraph(){
 
         composable ("home") {
             DrawerScaffold(navController) {
-                HomeScreen()
+                HomeScreen(navController)
             }
         }
         composable ("permissions") {
@@ -36,6 +39,21 @@ fun AppNavGraph(){
         composable ("Favorites") {
             DrawerScaffold(navController) {
                 Text("Pantalla de favoritos próximamente")
+            }
+        }
+        composable ("consumo_agua") {
+            DrawerScaffold(navController) {
+                ConsumoDeAguaCal(navController)
+            }
+        }
+        composable ("registro_actividad") {
+            DrawerScaffold(navController) {
+                RegistroDeActFisica(navController)
+            }
+        }
+        composable ("catalogo_autos") {
+            DrawerScaffold(navController) {
+                CatalogoDeAutosDep(navController)
             }
         }
     }
